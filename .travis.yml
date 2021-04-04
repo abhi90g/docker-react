@@ -1,5 +1,5 @@
-sudo: required
 language: generic
+sudo: required
 services:
   - docker # telling travisCI we need a docker copy ready to go
 
