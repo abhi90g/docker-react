@@ -1,0 +1,15 @@
+FROM node:alpine
+
+WORKDIR '/app'
+
+COPY package.json .
+RUN npm install
+
+# copy everything from current dir in the WORKDIR('/app')
+# SHOULD leave below line even after using ".:/app" in docker-compose so that prod setup remains unchanged
+COPY . . 
+
+CMD ["npm", "run", "start"]
+
+# web:
+#     stdin_open: true
